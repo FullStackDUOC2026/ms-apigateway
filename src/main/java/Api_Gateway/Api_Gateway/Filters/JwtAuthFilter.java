@@ -45,10 +45,11 @@
             String token = authHeader.substring(7);
 
             try {
-                Jwts.parserBuilder()
-                        .setSigningKey(getSigningKey())
-                        .build()
-                        .parseClaimsJws(token);
+                  Jwts.parser()
+                      .verifyWith(getSigningKey())
+                      .build()
+                      .parseSignedClaims(token);
+
 
             } catch (JwtException e) {
                 exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
