@@ -3,11 +3,26 @@ spring:
     gateway:
       routes:
         - id: ms-usuario
-          uri: http://localhost:8081
+          uri: https://ms-registrousuarios-production.up.railway.app
           predicates:
             - Path=/auth/**
 
         - id: ms-equipos
-          uri: http://localhost:8082
+          uri: https://ms-equipo-production.up.railway.app
           predicates:
             - Path=/equipos/**
+
+        - id: ms-empleado
+          uri: https://ms-empleado-production.up.railway.app
+          predicates:
+          - Path=/api/v1/empleado
+
+          - id: ms-asignacion
+          - uri: https://ms-gestionequipo-production.up.railway.app
+          - predicates:
+          - Path=/api/v1/asignacion
+
+          - id: ms-mantenimiento
+          - uri: https://ms-mantenimiento-production.up.railway.app
+          - predicates:
+          - Path=: /mantenimientos
