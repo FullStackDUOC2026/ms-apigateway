@@ -26,3 +26,9 @@
             uri: https://ms-mantenimiento-production.up.railway.app
             predicates:
               - Path=/mantenimientos/**
+
+          - id: ms-historial
+            uri: https://ms-historial-production.up.railway.app
+            predicates:
+              - Path=/historial/**
+        
